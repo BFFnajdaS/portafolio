@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qari - Creative Developer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Websites for Local Businesses | Malaysia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS SECTION */
         * {
             margin: 0;
             padding: 0;
@@ -14,1118 +15,532 @@
         }
 
         :root {
-            --primary: #6366f1;
-            --secondary: #8b5cf6;
-            --accent: #ec4899;
-            --dark: #0f172a;
-            --darker: #020617;
-            --light: #e2e8f0;
-            --text: #94a3b8;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            --green: #25D366;
+            --green-dark: #1da851;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #fff;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--darker);
-            color: var(--light);
-            overflow-x: hidden;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
             line-height: 1.6;
+            background: var(--white);
         }
 
-        /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background: var(--darker);
-            overflow: hidden;
-        }
-
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle at 20% 80%, var(--primary) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, var(--secondary) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, var(--accent) 0%, transparent 50%);
-            opacity: 0.1;
-            animation: bgRotate 20s linear infinite;
-        }
-
-        @keyframes bgRotate {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
-            100% { transform: rotate(360deg) scale(1); }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(15, 23, 42, 0.95);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.2); }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--light);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 2rem;
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 1;
+        .container {
             max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* SECTION 1: Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeInUp 1s ease-out;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--dark);
         }
 
         .hero .subtitle {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            color: var(--text);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 32px;
         }
 
-        .hero .tagline {
-            font-size: 1.1rem;
-            color: var(--text);
-            margin-bottom: 3rem;
-            animation: fadeInUp 1s ease-out 0.4s backwards;
+        .hero .industries {
+            font-size: 15px;
+            color: var(--gray);
+            margin-bottom: 32px;
+            letter-spacing: 0.5px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero .industries span {
+            margin: 0 8px;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.6s backwards;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
+            font-size: 16px;
+            transition: background 0.2s;
         }
 
-        .btn-primary {
-            background: var(--gradient);
-            color: white;
-            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        .btn-whatsapp:hover {
+            background: var(--green-dark);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.6);
+        .btn-whatsapp svg {
+            width: 22px;
+            height: 22px;
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--light);
-            border: 2px solid var(--primary);
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 0;
         }
 
-        .btn-secondary:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--gradient);
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* SECTION 2: Work */
+        .work {
+            padding: 60px 0;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 40px;
             text-align: center;
-            margin-bottom: 3rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
         }
 
-        .about-image {
-            position: relative;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 20px;
-            transform: rotate(5deg);
-            z-index: -1;
-        }
-
-        .about-image > div {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .about-text p {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
+        .project {
+            background: var(--light-gray);
+            border-radius: 12px;
             overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.3s;
-            transform: rotate(45deg);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-        }
-
-        .skill-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .skill-name {
-            font-weight: 600;
-            color: var(--light);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
         }
 
         .project-image {
-            height: 200px;
-            background: var(--gradient);
-            position: relative;
-            overflow: hidden;
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        /* Project-specific backgrounds */
-        .project-card:nth-child(1) .project-image {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .project-card:nth-child(1) .project-image::before {
-            content: '✂️';
-            font-size: 4rem;
-            opacity: 0.3;
-        }
-
-        .project-card:nth-child(2) .project-image {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        .project-card:nth-child(2) .project-image::before {
-            content: '🚗';
-            font-size: 4rem;
-            opacity: 0.3;
-        }
-
-        .project-card:nth-child(3) .project-image {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-
-        .project-card:nth-child(3) .project-image::before {
-            content: '🏥';
-            font-size: 4rem;
-            opacity: 0.3;
-        }
-
-        .project-card:nth-child(4) .project-image {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        }
-
-        .project-card:nth-child(4) .project-image::before {
-            content: '🍽️';
-            font-size: 4rem;
-            opacity: 0.3;
-        }
-
-        .project-card:nth-child(5) .project-image {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-        }
-
-        .project-card:nth-child(5) .project-image::before {
-            content: '🧁';
-            font-size: 4rem;
-            opacity: 0.3;
-        }
-
-        .project-card:nth-child(6) .project-image {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .project-card:nth-child(6) .project-image::before {
-            content: '📚';
-            font-size: 4rem;
-            opacity: 0.3;
+            font-size: 14px;
+            color: var(--gray);
+            position: relative;
         }
 
         .project-image::after {
-            content: 'View Project';
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 1.2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            inset: 0;
+            background: 
+                linear-gradient(90deg, transparent 50%, rgba(0,0,0,0.03) 50%),
+                linear-gradient(rgba(0,0,0,0.03) 50%, transparent 50%);
+            background-size: 4px 4px;
         }
 
-        .project-card:hover .project-image::after {
-            opacity: 1;
-        }
-
-        .project-info {
-            padding: 2rem;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--light);
-        }
-
-        .project-description {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: rgba(99, 102, 241, 0.2);
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .project-btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
+        .project-image span {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
             z-index: 1;
         }
 
-        .project-btn i {
-            font-size: 1rem;
+        .project-content {
+            padding: 24px;
         }
 
-        .btn-live {
-            background: var(--gradient);
+        .project h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .project ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .project li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .project li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .btn-demo {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--dark);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-demo:hover {
+            background: var(--dark);
             color: white;
-            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
         }
 
-        .btn-live:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+        /* SECTION 3: Process */
+        .process {
+            padding: 60px 0;
+            background: var(--light-gray);
         }
 
-        .btn-code {
-            background: transparent;
-            color: var(--light);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+        .steps {
+            display: grid;
+            gap: 24px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .btn-code:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary);
-            color: var(--primary);
+        .step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
         }
 
-        /* Contact Section */
-        .contact-content {
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--dark);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            padding-top: 6px;
+            font-size: 16px;
+        }
+
+        /* SECTION 4: Pricing */
+        .pricing {
+            padding: 60px 0;
+        }
+
+        .price-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 32px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-label {
+            color: var(--gray);
+        }
+
+        .price-value {
+            font-weight: 600;
+        }
+
+        .price-note {
             text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* SECTION 5: Trust */
+        .trust {
+            padding: 60px 0;
+            background: var(--light-gray);
+        }
+
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+        .trust-item {
+            text-align: center;
+            padding: 24px 16px;
+            background: white;
+            border-radius: 8px;
         }
 
-        .contact-item {
+        .trust-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .trust-item p {
+            font-size: 15px;
+            color: var(--gray);
+        }
+
+        /* SECTION 6: Contact */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .contact p {
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .contact-links {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            color: var(--text);
+            gap: 16px;
         }
 
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .social-links {
+        .contact-secondary {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            gap: 24px;
+            margin-top: 8px;
         }
 
-        .social-links a {
-            display: inline-flex;
-            width: 50px;
-            height: 50px;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--light);
-            font-size: 1.25rem;
-            transition: all 0.3s;
+        .contact-secondary a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
         }
 
-        .social-links a:hover {
-            background: var(--gradient);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+        .contact-secondary a:hover {
+            color: var(--dark);
         }
 
         /* Footer */
         footer {
+            padding: 24px 0;
             text-align: center;
-            padding: 2rem;
-            color: var(--text);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
+            color: var(--gray);
+            border-top: 1px solid #eee;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(15, 23, 42, 0.95);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 0 40px;
             }
 
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu-toggle {
+            .hero .industries span {
                 display: block;
+                margin: 4px 0;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
+            .project-image {
+                height: 180px;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-links {
+            .contact-secondary {
                 flex-direction: column;
+                gap: 12px;
             }
-
-            .project-btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        /* Cursor Trail Effect */
-        .cursor-trail {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--gradient);
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0.5;
-            z-index: 9999;
-            transition: transform 0.1s;
         }
     </style>
 </head>
 <body>
-    <!-- Background Animation -->
-    <div class="bg-animation"></div>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">Qari</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        
-        <div class="hero-content">
-            <h1>Hi, I'm Qari</h1>
-            <p class="subtitle">Web Developer & Business Solutions Expert</p>
-            <p class="tagline">Creating stunning websites that help businesses thrive online</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
+    <!-- SECTION 1: Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>I build simple websites that help local businesses get more customers.</h1>
+            <p class="industries">
+                <span>Clinics</span> • <span>Tuition Centers</span> • <span>Car Workshops</span>
+            </p>
+            <a href="https://wa.me/60123456789" class="btn-whatsapp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp Me
+            </a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <div style="width: 100%; height: 300px; background: var(--gradient); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 5rem; color: white;">Q</div>
-            </div>
-            <div class="about-text">
-                <p>I'm a passionate web developer specializing in creating beautiful, functional websites for businesses across various industries. With expertise in HTML5, CSS3, and JavaScript, I craft responsive and user-friendly digital experiences.</p>
-                <p>My portfolio includes diverse projects ranging from elegant salon websites to professional clinic platforms, each tailored to meet specific business needs and enhance online presence. I believe in clean code, modern design, and attention to detail.</p>
-                <p>Whether you need a restaurant website that makes mouths water, a tuition center platform that inspires learning, or any other web solution, I'm here to bring your vision to life with creativity and technical excellence.</p>
-            </div>
-        </div>
-    </section>
+    <div class="divider"></div>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                <div class="skill-name">HTML5</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                <div class="skill-name">CSS3</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <div class="skill-name">JavaScript</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="skill-name">Responsive Design</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
-                <div class="skill-name">UI Design</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fas fa-rocket"></i></div>
-                <div class="skill-name">Performance</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
-                <div class="skill-name">Bootstrap</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                <div class="skill-name">Git</div>
-            </div>
-        </div>
-    </section>
+    <!-- SECTION 2: Work -->
+    <section class="work">
+        <div class="container">
+            <h2 class="section-title">Recent Work</h2>
+            <div class="projects">
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card" data-live-url="https://bffnajdas.github.io/salon/" data-github-url="https://github.com/BFFnajdaS/salon">
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <h3 class="project-title">Salon Website</h3>
-                    <p class="project-description">A modern and elegant website for a beauty salon featuring appointment booking, service showcase, and gallery sections.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
+                <!-- Project 1: Clinic -->
+                <article class="project">
+                    <div class="project-image">
+                        <span>Klinik Sehat Website</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://bffnajdas.github.io/salon/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/BFFnajdaS/salon" target="_blank" rel="noopener noreferrer" class="project-btn btn-code">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
+                    <div class="project-content">
+                        <h3>Klinik Sehat — Medical Clinic</h3>
+                        <ul>
+                            <li>Clear contact & appointment buttons</li>
+                            <li>Google Maps integration for easy directions</li>
+                            <li>Mobile-friendly for patients searching on phone</li>
+                        </ul>
+                        <a href="https://bffnajdas.github.io/clinic-website/" class="btn-demo">View Live Demo →</a>
                     </div>
-                </div>
-            </div>
-            <div class="project-card" data-live-url="https://bffnajdas.github.io/Car-workshop/" data-github-url="https://github.com/BFFnajdaS/Car-workshop/blob/main/index.html">
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <h3 class="project-title">Car Workshop</h3>
-                    <p class="project-description">A professional automotive service website with service listings, pricing calculator, and online booking system.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://bffnajdas.github.io/Car-workshop/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/BFFnajdaS/Car-workshop/blob/main/index.html" target="_blank" rel="noopener noreferrer" class="project-btn btn-code">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-live-url="https://bffnajdas.github.io/clinic-website/" data-github-url="https://github.com/BFFnajdaS/clinic-website/blob/main/index.html">
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <h3 class="project-title">Clinic Website</h3>
-                    <p class="project-description">A healthcare clinic website with doctor profiles, appointment scheduling, and patient information portal.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://bffnajdas.github.io/clinic-website/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/BFFnajdaS/clinic-website/blob/main/index.html" target="_blank" rel="noopener noreferrer" class="project-btn btn-code">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-live-url="https://bffnajdas.github.io/restourant/" data-github-url="https://github.com/BFFnajdaS/restourant">
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <h3 class="project-title">Restaurant Website</h3>
-                    <p class="project-description">A delicious restaurant website featuring interactive menu, table reservations, and online ordering system.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://your-restaurant-site.com" target="_blank" rel="noopener noreferrer" class="project-btn btn-live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/BFFnajdaS/restourant" target="_blank" rel="noopener noreferrer" class="project-btn btn-code">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-live-url="https://bffnajdas.github.io/bakery/" data-github-url="https://github.com/BFFnajdaS/bakery">
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <h3 class="project-title">Bakery Website</h3>
-                    <p class="project-description">A sweet and inviting bakery website with product catalog, custom cake orders, and delivery tracking.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://bffnajdas.github.io/bakery/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/BFFnajdaS/bakery" target="_blank" rel="noopener noreferrer" class="project-btn btn-code">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-live-url="https://bffnajdas.github.io/TuitionCenterWebsite/" data-github-url="https://github.com/yourusername/tuition-center">
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <h3 class="project-title">Tuition Center Website</h3>
-                    <p class="project-description">An educational platform with course listings, teacher profiles, online enrollment, and student portal access.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://bffnajdas.github.io/TuitionCenterWebsite/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/BFFnajdaS/TuitionCenterWebsite/blob/main/index.html" target="_blank" rel="noopener noreferrer" class="project-btn btn-code">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </article>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-content">
-            <p style="color: var(--text); margin-bottom: 2rem;">I'm always excited to work on new projects and collaborate with creative minds. Feel free to reach out!</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>unityweb6345@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Available Worldwide</span>
-                </div>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/BFFnajdaS"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sharul-abqari-52a532367/"><i class="fab fa-linkedin"></i></a>
+                <!-- Project 2: Tuition Center -->
+                <article class="project">
+                    <div class="project-image">
+                        <span>Excel Tuition Website</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Excel Tuition — Education Center</h3>
+                        <ul>
+                            <li>Class schedules & subjects clearly displayed</li>
+                            <li>Easy WhatsApp registration for parents</li>
+                            <li>Shows teachers' qualifications to build trust</li>
+                        </ul>
+                        <a href="https://bffnajdas.github.io/TuitionCenterWebsite/" class="btn-demo">View Live Demo →</a>
+                    </div>
+                </article>
+
+                <!-- Project 3: Car Workshop -->
+                <article class="project">
+                    <div class="project-image">
+                        <span>AutoCare Pro Website</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>AutoCare Pro — Car Workshop</h3>
+                        <ul>
+                            <li>Service list with transparent pricing</li>
+                            <li>Before/after gallery to show quality work</li>
+                            <li>One-tap call button for quick bookings</li>
+                        </ul>
+                        <a href="https://bffnajdas.github.io/Car-workshop/" class="btn-demo">View Live Demo →</a>
+                    </div>
+                </article>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- SECTION 3: Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">You tell me your business details</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">I build the website in 3–5 days</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">You review and give feedback</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">I launch it. You're live.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple Pricing</h2>
+            <div class="price-card">
+                <div class="price-item">
+                    <span class="price-label">Website Setup</span>
+                    <span class="price-value">RM800 – RM1,200</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-label">Monthly Maintenance (optional)</span>
+                    <span class="price-value">RM80 – RM150</span>
+                </div>
+            </div>
+            <p class="price-note">No long-term contracts. Pay only for what you need.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Trust -->
+    <section class="trust">
+        <div class="container">
+            <h2 class="section-title">Why Work With Me</h2>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <div class="trust-icon">⚡</div>
+                    <p>Fast response on WhatsApp</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💬</div>
+                    <p>Simple, no technical jargon</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">📍</div>
+                    <p>Local Malaysian-based support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Contact -->
+    <section class="contact">
+        <div class="container">
+            <h2>Let's Get Your Business Online</h2>
+            <p>Message me — I usually reply within a few hours.</p>
+            <div class="contact-links">
+                <a href="https://wa.me/60123456789" class="btn-whatsapp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp Me Now
+                </a>
+                <div class="contact-secondary">
+                    <a href="mailto:hello@example.com">hello@example.com</a>
+                    <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Qari. All rights reserved. | Built with passion and code</p>
+        <div class="container">
+            © 2024 — Websites for Local Businesses
+        </div>
     </footer>
 
-    <!-- Cursor Trail -->
-    <div class="cursor-trail"></div>
-
-    <script>
-        // JavaScript SECTION
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    navLinks.classList.remove('active');
-                    const icon = mobileMenuToggle.querySelector('i');
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
-            });
-        });
-
-        // Cursor trail effect
-        const cursorTrail = document.querySelector('.cursor-trail');
-        let mouseX = 0, mouseY = 0;
-        let trailX = 0, trailY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        function animateCursor() {
-            const speed = 0.1;
-            trailX += (mouseX - trailX) * speed;
-            trailY += (mouseY - trailY) * speed;
-            
-            cursorTrail.style.left = trailX - 10 + 'px';
-            cursorTrail.style.top = trailY - 10 + 'px';
-            
-            requestAnimationFrame(animateCursor);
-        }
-
-        animateCursor();
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Animate sections on scroll
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.6s ease-out';
-            observer.observe(section);
-        });
-
-        // Add hover effect to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-
-            // Make entire card clickable (opens live demo)
-            const liveBtn = card.querySelector('.btn-live');
-            if (liveBtn) {
-                card.style.cursor = 'pointer';
-                card.addEventListener('click', function(e) {
-                    // Don't trigger if clicking on buttons
-                    if (!e.target.closest('.project-btn')) {
-                        window.open(liveBtn.href, '_blank');
-                    }
-                });
-            }
-        });
-
-        // Prevent project button clicks from bubbling
-        document.querySelectorAll('.project-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-        });
-
-        // Parallax effect for floating elements
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-element');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.2);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-
-        // Dynamic typing effect for hero title
-        const heroTitle = document.querySelector('.hero h1');
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        let charIndex = 0;
-
-        function typeWriter() {
-            if (charIndex < text.length) {
-                heroTitle.textContent += text.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-
-        // Start typing effect when page loads
-        window.addEventListener('load', () => {
-            setTimeout(typeWriter, 500);
-        });
-
-        // Add ripple effect to buttons
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.classList.add('ripple');
-                
-                this.appendChild(ripple);
-                
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-
-        // Add ripple CSS dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            .btn {
-                position: relative;
-                overflow: hidden;
-            }
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.5);
-                transform: scale(0);
-                animation: ripple-animation 0.6s ease-out;
-            }
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        console.log('Portfolio loaded successfully!');
-    </script>
 </body>
 </html>
